@@ -191,9 +191,6 @@ const getWeather = async function (city, subCity) {
       current: { temp_c: temperature },
     } = resToday;
 
-    // const {
-    //   current: { temp_c: temperature },
-    // } = resToday;
     locationTemperature.innerHTML = `${temperature}`;
 
     //ADD Location name in UI
