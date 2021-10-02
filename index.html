@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEATHER-TIME</title>
+
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/6340a0a222.js" crossorigin="anonymous"></script>
+  <!-- Tailwind -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- Script JS -->
+  <script defer src="./js/script.js"></script>
+
+
+  
+</head>
+<style>
+  
+</style>
+<body>
+  <div class="container mx-auto ">
+    <div class="app bg-day mt-3 mb-3 mr-3 ml-3" >
+   
+    
+      <!-- NAV -->
+    <div class="bar">
+      <!-- SEARCH -->
+      <div class="search">
+
+      <input class="search-input" type="text" placeholder="Search your city">
+      <a href="#" class="search-btn">
+        <!-- <i class="fas fa-search search-icon"></i> -->
+        <img src="./img/travel_explore.png" class="search-icon" alt="">
+      </a>  
+      <img src="./img/travel_explore.png" class=" search-icon-2 none">
+      </div>
+
+      <!-- TITLE -->
+      <div class="titles flex ">
+        
+        <h1 class="title">WEATHER-TIME</h1>
+        <!-- <span class="title-span ">TIME</span> -->
+      </div>
+
+      <!-- Geolocal -->
+      <div class="geolocal">
+        <img src="./img/my_location_black.png"  class="geolocal-icon" alt="">
+            <!-- <i class="fas fa-location-arrow geolocal-icon"></i>   -->
+      </div>
+    </div>
+    
+  <div class="loading justify-center items-center text-center ">
+    <h2 class=" loading-text flex justify-center items-center ">The simple and essential METEO Application.
+      <!-- <span class="ball rotate-right"> </span> -->
+     </h2>
+
+  </div>
+
+    <div class="cover none">
+
+      <div class="main">
+  
+    <!-- LOCATION -->
+        <div class="location flex flex-col flex-1 justify-center items-center">
+  
+          <div class="location-city">
+            <h2 class="location-city-text"></h2>
+          </div>
+  
+          <div class="location-temperature flex">
+            <h2 class="location-temperature-text"></h2><span class="location-temperature-degree">°</span>
+          </div>
+        </div>
+  
+  
+       <!-- WEATHER ICON -->
+        <div class="weather flex-1">
+          <div class="weather-icons flex items-center justify-center flex-col">
+            <img class="weather-icon" src="" alt="Current Weather">
+          <h2 class="weather-description"></h2>
+          </div>
+        </div>
+
+        <!-- DETAILS -->
+  
+        <div class="details flex-1 flex items-center justify-evenly">
+  
+          <div class=" flex items-center justify-center flex-col">
+  
+            <div class=" flex flex-col items-center justify-center">
+              <h3 class="details-title text-blue-100">Humidity</h3>
+              <h4 class="details-humidity details-sub"></h4>
+            </div>
+  
+            <div class=" flex flex-col items-center justify-center mt-11">
+              <h3 class="details-title text-yellow-200">Sunrise</h3>
+              <h4 class="details-sunrise details-sub " ></h4>
+            </div>
+          </div>
+           
+  
+          <div class=" flex items-center justify-evenly flex-col">
+  
+            <div class=" flex flex-col items-center justify-center ">
+              <h3 class="details-title">Wind</h3>
+              <h4 class="details-wind details-sub"></h4>
+            </div>
+  
+            <div class=" flex flex-col items-center justify-center mt-11 ">
+              <h3 class="details-title text-red-300">Sunset</h3>
+              <h4 class="details-sunset details-sub"></h4>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+      <!-- NEXT DAYS -->
+      <div class="next-title">
+        <h2 >Next 3 Days</h2>
+      </div>
+
+      <div class="next-days flex-row flex justify-center items-center  ">
+  
+  
+      <div class="next ">
+        <img class="next-img-1"  src="" alt="Next first day forecast">
+        <h3 class="next-day-1 next-day"></h3>
+        <h4 class="next-deg-1 next-deg"></h4>
+        <h2 class="next-text-1 m-3"></h2>
+      </div>
+  
+    
+      <div class="next next-2">
+        <img class="next-img-2"  src="" alt="Second day forecast">
+        <h3 class="next-day-2 next-day">Thu</h3>
+        <h4 class="next-deg-2 next-deg" >9°</h4>
+        <h2 class="next-text-2 m-3"></h2>
+      </div>
+      <div class="next next-2">
+        <img class="next-img-3"  src="" alt="Third day forecast">
+        <h3 class="next-day-3 next-day"></h3>
+        <h4 class="next-deg-3 next-deg"></h4>
+        <h2 class="next-text-3  m-3"></h2>
+      </div>
+     </div>
+  
+    </div>
+    <div class="flex items-center justify-center flex-col mb-5">
+      <h2>WEATHER-TIME &copy 2020</h2>
+      <a  href="">
+        <img  src="" alt="">
+      </a>
+    </div>
+    </div>
+     
+
+  </div>
+
+  </div>
+</body>
+
+</html>

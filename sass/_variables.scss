@@ -1,0 +1,13 @@
+// COLORS
+$light-day-blue: #03d6ff;
+$dark-day-blue: #3766c3;
+
+$dark-night-blue: #061e48;
+$light-night-blue: #3766c3;
+
+@font-face {
+  font-family: "Patrick Hand", cursive;
+  src: url("../font/PatrickHand-Regular.ttf") format("ttf");
+}
+
+$font-family-base: "Patrick Hand";

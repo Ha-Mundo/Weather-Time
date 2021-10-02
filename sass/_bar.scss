@@ -1,0 +1,100 @@
+.bar {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+.title {
+  width: 100%;
+  /* transform: rotate(-10deg); */
+  font-size: 2rem;
+  &-span {
+    transform: translateY(20px);
+    font-size: 1.5rem;
+  }
+}
+
+//SEARCH BTN
+.search {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  outline: 0;
+
+  @media only screen and (max-width: 940px) {
+    transform: translateY(60px);
+  }
+  &-btn {
+    width: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-input {
+    border: none;
+    background: white;
+    outline: none;
+    float: left;
+    margin-left: 0.5rem;
+    color: $dark-day-blue;
+
+    color: white;
+    transition: 0.8s;
+    width: 0;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-family: $font-family-base;
+    position: absolute;
+  }
+
+  &-icon {
+    color: $dark-day-blue;
+
+    &-2 {
+      width: 2rem;
+      position: relative;
+      color: $dark-day-blue;
+      cursor: pointer;
+      margin-left: 0.5rem;
+      border-radius: 0 50px 50px 0;
+      z-index: 0;
+    }
+  }
+}
+
+.search:focus,
+.search:active,
+.search:hover {
+  outline: none 0 !important;
+}
+
+//GEO-LOCALIZATION BTN
+
+.geolocal {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 1rem;
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+  @media only screen and (max-width: 940px) {
+    transform: translateY(60px);
+  }
+  &-icon {
+    color: $dark-day-blue;
+    align-self: center;
+    justify-self: center;
+    /* margin-left: 0.4rem; */
+  }
+}

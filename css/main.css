@@ -1,0 +1,386 @@
+@font-face {
+  font-family: "Patrick Hand", cursive;
+  src: url("../font/PatrickHand-Regular.ttf") format("ttf");
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 62, 5%;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Patrick Hand", cursive;
+}
+
+.app {
+  width: 100%;
+  border-radius: 30px;
+  align-self: center;
+}
+
+.meteo-logo {
+  width: 4rem;
+}
+
+@media only screen and (max-width: 940px) {
+  .app {
+    width: 95%;
+  }
+}
+
+.cover {
+  transform: translateY(-80px);
+}
+
+@media only screen and (max-width: 940px) {
+  .cover {
+    transform: translateY(0);
+  }
+}
+
+.none {
+  visibility: hidden;
+}
+
+.bg-day {
+  background: linear-gradient(41deg, #03abff 0%, #3766c3 100%);
+}
+
+.bg-night {
+  background: linear-gradient(41deg, #3766c3 0%, #061e48 100%);
+}
+
+.loading-text {
+  font-size: 2rem;
+  transform: translateY(250%);
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .loading-text {
+    font-size: 1.6rem;
+  }
+}
+
+.ball {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.81);
+  margin-left: 1rem;
+}
+
+.rotate-right {
+  animation: rotate-right 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1s
+    infinite both;
+}
+
+@keyframes rotate-right {
+  0% {
+    transform: rotate(0);
+    transform-origin: right;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: right;
+  }
+}
+
+/* .footer-img {
+  width: 11rem;
+}
+
+.footer-img:hover {
+  width: 12rem;
+} */
+
+.bar {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.title {
+  width: 100%;
+  /* transform: rotate(-10deg); */
+  font-size: 2rem;
+}
+
+.title-span {
+  transform: translateY(20px);
+  font-size: 1.5rem;
+}
+
+.search {
+  height: 3.1rem;
+  width: 3.1rem;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  outline: 0;
+}
+
+@media only screen and (max-width: 940px) {
+  .search {
+    transform: translateY(60px);
+  }
+}
+
+.search-btn {
+  width: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s;
+}
+
+.search-input {
+  border: none;
+  background: white;
+  outline: none;
+  float: left;
+  margin-left: 0.5rem;
+  color: #3766c3;
+  color: white;
+  transition: 0.8s;
+  width: 0;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-family: "Patrick Hand", cursive;
+  position: absolute;
+}
+
+.search-icon {
+  color: #3766c3;
+}
+
+.search-icon-2 {
+  width: 2rem;
+  position: relative;
+  color: #3766c3;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  border-radius: 0 50px 50px 0;
+  z-index: 0;
+}
+
+.search:focus,
+.search:active,
+.search:hover {
+  outline: none 0 !important;
+}
+
+.geolocal {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 1rem;
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 940px) {
+  .geolocal {
+    transform: translateY(60px);
+  }
+}
+
+.geolocal-icon {
+  color: #3766c3;
+  align-self: center;
+  justify-self: center;
+  /* margin-left: 0.4rem; */
+}
+
+.main {
+  display: flex;
+}
+
+@media only screen and (max-width: 1037px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+.location-city-text {
+  font-size: 4rem;
+  transform: translateY(70px);
+}
+
+@media only screen and (max-width: 940px) {
+  .location-city-text {
+    transform: translateY(-20px);
+  }
+}
+
+.location-temperature-text {
+  background: -webkit-linear-gradient(white, rgba(209, 209, 209, 0.292));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 14rem;
+}
+
+@media only screen and (max-width: 940px) {
+  .location-temperature-text {
+    font-size: 7rem;
+    transform: translateY(-60px);
+  }
+}
+
+.location-temperature-degree {
+  transform: translateY(50px);
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 940px) {
+  .location-temperature-degree {
+    font-size: 2rem;
+    transform: translateY(-30px);
+  }
+}
+
+.weather-icon {
+  margin-top: 3rem;
+  width: 20rem;
+}
+
+@media only screen and (max-width: 1037px) {
+  .weather-icon {
+    width: 22rem;
+    transform: translateY(-110px);
+  }
+}
+
+.weather-description {
+  font-size: 2rem;
+  transform: translateY(-50px);
+}
+
+@media only screen and (max-width: 1037px) {
+  .weather-description {
+    font-size: 1.8rem;
+    transform: translateY(-120px);
+    align-self: center;
+  }
+}
+
+.next {
+  width: 8rem;
+  height: 17rem;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.016) 0%,
+    rgba(205, 205, 205, 0.279) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (min-width: 380px) and (max-width: 480px) {
+  .next {
+    width: 7rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .next {
+    width: 6rem;
+  }
+}
+
+.next-2 {
+  margin-left: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .next-2 {
+    margin-left: 1rem;
+  }
+}
+
+.next-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.next-img {
+  width: 7rem;
+}
+
+@media only screen and (max-width: 940px) {
+  .next-img {
+    width: 4rem;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .next-days {
+    margin-bottom: 2rem;
+  }
+}
+
+.next-day {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+@media only screen and (max-width: 940px) {
+  .next-day {
+    font-size: 1.2rem;
+  }
+}
+
+.next-deg {
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 940px) {
+  .next-deg {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1037px) {
+  .details {
+    transform: translateY(-70px);
+  }
+}
+
+.details-title {
+  font-size: 2.7rem;
+}
+
+.details-sub {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=main.css.map */
