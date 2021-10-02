@@ -57,11 +57,11 @@ body {
 }
 
 .bg-day {
-  background: linear-gradient(41deg, #03abff 0%, #3766c3 100%);
+  background: linear-gradient(#03abff 0%, #3766c3 100%);
 }
 
 .bg-night {
-  background: linear-gradient(41deg, #3766c3 0%, #061e48 100%);
+  background: linear-gradient(#3766c3 0%, #061e48 100%);
 }
 
 .loading-text {
