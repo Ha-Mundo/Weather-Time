@@ -1,7 +1,7 @@
-//API KEY
+// API KEY
 const apiKey = "5f1002c6c18243bc98814327210202";
 
-//LOCATION UI ELEMENTS
+// LOCATION UI ELEMENTS
 const locationCity = document.querySelector(".location-city-text");
 const locationTemperature = document.querySelector(
   ".location-temperature-text"
@@ -14,29 +14,29 @@ const humidityEl = document.querySelector(".details-humidity");
 const windEl = document.querySelector(".details-wind");
 const weatherIcon = document.querySelector(".weather-icon");
 
-//Next Day1 VARIABLE
+// Next Day1 VARIABLE
 const nextDay1 = document.querySelector(".next-day-1");
 const nextDayDeg1 = document.querySelector(".next-deg-1");
 const nextText1 = document.querySelector(".next-text-1");
 
-//NEXT DAY2 VARIABLE
+// NEXT DAY2 VARIABLE
 const nextDay2 = document.querySelector(".next-day-2");
 const nextDayDeg2 = document.querySelector(".next-deg-2");
 const nextText2 = document.querySelector(".next-text-2");
 
-//NEXT DAY3 VARIABLE
+// NEXT DAY3 VARIABLE
 const nextDay3 = document.querySelector(".next-day-3");
 const nextDayDeg3 = document.querySelector(".next-deg-3");
 const nextText3 = document.querySelector(".next-text-3");
 
-//NEXT DAYS ICONS
+// NEXT DAYS ICONS
 const nextIcon1 = document.querySelector(".next-img-1");
 const nextIcon2 = document.querySelector(".next-img-2");
 const nextIcon3 = document.querySelector(".next-img-3");
 
 const app = document.querySelector(".app");
 
-//SEARCH & LOCATION BTN
+// SEARCH & LOCATION BTN
 const geoLocalBtn = document.querySelector(".geolocal-icon");
 
 const searchBtn = document.querySelector(".search-icon");
@@ -44,14 +44,14 @@ const searchBtn_2 = document.querySelector(".search-icon-2");
 
 const searchInput = document.querySelector(".search-input");
 
-//UI ELEMENTS
+// UI ELEMENTS
 const cover = document.querySelector(".cover");
 const loading = document.querySelector(".loading");
 const loading_text = document.querySelector(".loading-text");
 
 //-------------------------------------------------------------------
 
-//Toggle with the two icons
+// Toggle with the two icons
 searchBtn.addEventListener("click", function () {
   searchBtn.classList.add("none");
   searchInput.style.width = "250px";
@@ -60,7 +60,7 @@ searchBtn.addEventListener("click", function () {
   searchBtn_2.classList.remove("none");
 });
 
-//ICONS BASE ON DAY OR NIGHT AND CONDITIONS
+// ICONS BASE ON DAY OR NIGHT AND CONDITIONS
 const weatherImgDay = function (el, text) {
   if (text.includes(("rain" && "heavy") || ("torrential" && "rain"))) {
     el.src = "./img/heavyrain.png";
@@ -112,7 +112,7 @@ const weatherImgNight = function (el, text) {
   }
 };
 
-//*FUNCTION DAY-NIGHT
+// FUNCTION DAY-NIGHT
 const isDayTime = function (dayTime, el, text) {
   if (dayTime === 1) {
     weatherImgDay(el, text);
@@ -127,17 +127,17 @@ const isDayTime = function (dayTime, el, text) {
   }
 };
 
-//RENDER ERROR
+// RENDER ERROR
 const renderError = function (msg) {
   loading_text.innerHTML = `${msg}`;
 };
 
-//*FUNCTION CAPITALIZE WORD
+// FUNCTION CAPITALIZE WORD
 const firstUpper = function (word) {
   return word[0].toUpperCase() + word.slice(1);
 };
 
-//*FUNCTIONS ADD OR REMOVE LOADING COVER
+// FUNCTIONS ADD OR REMOVE LOADING COVER
 const addLoad = function () {
   loading.classList.remove("none");
   loading_text.innerHTML = `
@@ -167,7 +167,7 @@ const removeLoad = function () {
 
 // }
 
-//*GET CORDS GEO
+// GET CORDS GEO
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -177,7 +177,7 @@ const getPosition = function () {
 const getWeather = async function (city, subCity) {
   try {
     addLoad();
-    //Current weather
+    // Current weather
     const dataToday = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3`
     );
@@ -193,19 +193,19 @@ const getWeather = async function (city, subCity) {
 
     locationTemperature.innerHTML = `${temperature}`;
 
-    //ADD Location name in UI
+    // ADD Location name in UI
     const {
       location: { name: name },
     } = resToday;
 
-    //Add location name UI based on if the location was search by geoLocal or not
+    // Add location name UI based on if the location was search by geoLocal or not
     if (!subCity) {
       locationCity.innerHTML = `${name}`;
     } else {
       locationCity.innerHTML = `${subCity}`;
     }
 
-    //ADD HUMIDITY ,WIND,DAYTIME AND ICONS
+    // ADD HUMIDITY ,WIND,DAYTIME AND ICONS
     const {
       current: { humidity: humidity, wind_kph: wind, is_day: day },
     } = resToday;
@@ -214,7 +214,7 @@ const getWeather = async function (city, subCity) {
     humidityEl.innerHTML = `${humidity} %`;
     windEl.innerHTML = `${wind} Km/h`;
 
-    //NEXT 3 DAYS
+    // NEXT 3 DAYS
     const {
       forecast: {
         forecastday: [day_1, day_2, day_3],
@@ -243,7 +243,7 @@ const getWeather = async function (city, subCity) {
       date: date_3,
     } = day_3;
 
-    //todo REFACTORING NEED
+    // todo REFACTORING NEED
     const day1 = new Date(date_1).toString().substr(0, 3);
     nextDay1.innerHTML = `${day1}`;
     nextDayDeg1.innerHTML = `${temper_1} °`;
@@ -264,7 +264,7 @@ const getWeather = async function (city, subCity) {
 
     weatherImgDay(nextIcon3, text_3.toLowerCase());
 
-    //ASTRONOMY - SUNRISE / SUNSET
+    // ASTRONOMY - SUNRISE / SUNSET
     const data = await fetch(
       `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=${city}`
     );
@@ -278,7 +278,7 @@ const getWeather = async function (city, subCity) {
     sunRiseEl.innerHTML = `${sun.toLowerCase()}`;
     sunSetEl.innerHTML = `${set.toLowerCase()}`;
 
-    //Remove loading once we get all the data
+    // Remove loading once we get all the data
     removeLoad();
   } catch (err) {
     console.error(`Something wrong : ${err.message}🌚`);
@@ -286,7 +286,7 @@ const getWeather = async function (city, subCity) {
   }
 };
 
-//GET CITY FROM CORDS AND THEN THE WEATHER FROM GETWEATHER
+// GET CITY FROM CORDS AND THEN THE WEATHER FROM GETWEATHER
 const getCity = async function (lat, lng) {
   try {
     const geo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
@@ -326,7 +326,7 @@ const geoLocal = function () {
     });
 };
 
-//FUNCTION BTN
+// FUNCTION BTN
 geoLocalBtn.addEventListener("click", geoLocal);
 
 searchBtn_2.addEventListener("click", function (e) {
